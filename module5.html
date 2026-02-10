@@ -265,13 +265,13 @@ window.Quarto = {
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">glmfit =</span> model_full,</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">K =</span> <span class="dv">10</span>)<span class="sc">$</span>delta[<span class="dv">2</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 23.53689</code></pre>
+<pre><code>[1] 23.90952</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cv.glm</span>(<span class="at">data =</span> Boston,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">glmfit =</span> model_2var,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">K =</span> <span class="dv">10</span>)<span class="sc">$</span>delta[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 39.84875</code></pre>
+<pre><code>[1] 40.17651</code></pre>
 </div>
 </div>
 <p>The reported numbers by default are mean squared error (MSE). In its output, $delta[2] represents the bias corrected cross validation score. We can certainly change to other measure such as mean absolute deviation (MAE).</p>
@@ -284,14 +284,14 @@ window.Quarto = {
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">cost =</span> MAE_cost, </span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">K =</span> <span class="dv">10</span>)<span class="sc">$</span>delta[<span class="dv">2</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.370551</code></pre>
+<pre><code>[1] 3.381935</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cv.glm</span>(<span class="at">data =</span> Boston,         </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">glmfit =</span> model_2var,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">cost =</span> MAE_cost,</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">K =</span> <span class="dv">10</span>)<span class="sc">$</span>delta[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.277536</code></pre>
+<pre><code>[1] 4.265052</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -303,14 +303,14 @@ window.Quarto = {
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">cost =</span> MSE_cost, </span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">K =</span> <span class="dv">10</span>)<span class="sc">$</span>delta[<span class="dv">2</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 23.9025</code></pre>
+<pre><code>[1] 23.67792</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cv.glm</span>(<span class="at">data =</span> Boston,         </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">glmfit =</span> model_2var,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">cost =</span> MSE_cost,</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">K =</span> <span class="dv">10</span>)<span class="sc">$</span>delta[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 40.19173</code></pre>
+<pre><code>[1] 39.87104</code></pre>
 </div>
 </div>
 <p>If we set K to be the sample size, it is essentially LOOCV.</p>
@@ -359,26 +359,26 @@ window.Quarto = {
 </div>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>cv_lasso_fit<span class="sc">$</span>lambda.min </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.03373254</code></pre>
+<pre><code>[1] 0.02118502</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(lasso_fit, <span class="at">s =</span> cv_lasso_fit<span class="sc">$</span>lambda.min) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>14 x 1 sparse Matrix of class "dgCMatrix"
-             s=0.03373254
-(Intercept)  34.045951491
-crim         -0.096365803
-zn            0.040567190
+             s=0.02118502
+(Intercept)  34.880894915
+crim         -0.100714832
+zn            0.042486737
 indus         .          
-chas          2.677797325
-nox         -16.091776275
-rm            3.879698087
+chas          2.693903097
+nox         -16.562664331
+rm            3.851646315
 age           .          
-dis          -1.376623666
-rad           0.243459038
-tax          -0.009442628
-ptratio      -0.926685654
-black         0.008972315
-lstat        -0.522483752</code></pre>
+dis          -1.419168850
+rad           0.263725830
+tax          -0.010286456
+ptratio      -0.933927773
+black         0.009089735
+lstat        -0.522521473</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pred_IS <span class="ot">&lt;-</span> <span class="fu">predict</span>(lasso_fit,</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">as.matrix</span>(Boston[, <span class="fu">names</span>(Boston)<span class="sc">!=</span><span class="st">'medv'</span>]),</span>
@@ -394,11 +394,11 @@ lstat        -0.522483752</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">MSE_cost</span>(pred_IS, Boston<span class="sc">$</span>medv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 21.95255</code></pre>
+<pre><code>[1] 21.92126</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">MAE_cost</span>(pred_IS, Boston<span class="sc">$</span>medv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.253795</code></pre>
+<pre><code>[1] 3.259372</code></pre>
 </div>
 </div>
 </section>
@@ -530,41 +530,41 @@ glm(formula = default ~ ., family = binomial, data = credit_train)
 
 Coefficients:
               Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) -9.929e-01  9.650e-02 -10.290  &lt; 2e-16 ***
-LIMIT_BAL   -6.725e-07  1.766e-07  -3.807 0.000140 ***
-SEX2        -1.399e-01  3.433e-02  -4.074 4.62e-05 ***
-EDUCATION2  -7.472e-02  3.980e-02  -1.878 0.060431 .  
-EDUCATION3  -9.073e-02  5.322e-02  -1.705 0.088227 .  
-EDUCATION4  -1.093e+00  2.092e-01  -5.224 1.75e-07 ***
-MARRIAGE2   -1.867e-01  3.863e-02  -4.834 1.34e-06 ***
-MARRIAGE3   -2.328e-01  1.477e-01  -1.576 0.114949    
-AGE          5.762e-03  2.073e-03   2.779 0.005456 ** 
-PAY_0        5.941e-01  1.982e-02  29.976  &lt; 2e-16 ***
-PAY_2        7.969e-02  2.247e-02   3.546 0.000392 ***
-PAY_3        7.236e-02  2.529e-02   2.861 0.004222 ** 
-PAY_4        1.013e-02  2.802e-02   0.362 0.717640    
-PAY_5        4.412e-02  2.991e-02   1.475 0.140206    
-PAY_6        7.931e-03  2.478e-02   0.320 0.748891    
-BILL_AMT1   -4.813e-06  1.257e-06  -3.828 0.000129 ***
-BILL_AMT2    1.805e-06  1.671e-06   1.080 0.279969    
-BILL_AMT3    1.156e-06  1.473e-06   0.785 0.432549    
-BILL_AMT4    4.364e-07  1.489e-06   0.293 0.769388    
-BILL_AMT5    1.023e-06  1.639e-06   0.624 0.532326    
-BILL_AMT6   -6.292e-07  1.297e-06  -0.485 0.627498    
-PAY_AMT1    -1.365e-05  2.604e-06  -5.240 1.60e-07 ***
-PAY_AMT2    -1.153e-05  2.494e-06  -4.624 3.77e-06 ***
-PAY_AMT3    -1.865e-06  1.773e-06  -1.051 0.293112    
-PAY_AMT4    -3.385e-06  1.934e-06  -1.750 0.080080 .  
-PAY_AMT5    -2.398e-06  1.916e-06  -1.252 0.210681    
-PAY_AMT6    -3.136e-06  1.522e-06  -2.061 0.039298 *  
+(Intercept) -9.796e-01  9.662e-02 -10.138  &lt; 2e-16 ***
+LIMIT_BAL   -8.918e-07  1.785e-07  -4.995 5.88e-07 ***
+SEX2        -1.356e-01  3.438e-02  -3.944 8.02e-05 ***
+EDUCATION2  -9.140e-02  3.982e-02  -2.295 0.021707 *  
+EDUCATION3  -1.071e-01  5.318e-02  -2.013 0.044098 *  
+EDUCATION4  -1.197e+00  2.147e-01  -5.575 2.47e-08 ***
+MARRIAGE2   -1.978e-01  3.874e-02  -5.106 3.30e-07 ***
+MARRIAGE3   -1.854e-01  1.458e-01  -1.272 0.203510    
+AGE          6.049e-03  2.071e-03   2.921 0.003490 ** 
+PAY_0        5.927e-01  1.986e-02  29.849  &lt; 2e-16 ***
+PAY_2        8.777e-02  2.267e-02   3.873 0.000108 ***
+PAY_3        5.092e-02  2.523e-02   2.018 0.043609 *  
+PAY_4        5.100e-02  2.780e-02   1.834 0.066607 .  
+PAY_5        3.597e-02  3.000e-02   1.199 0.230554    
+PAY_6       -1.252e-02  2.479e-02  -0.505 0.613443    
+BILL_AMT1   -4.563e-06  1.205e-06  -3.785 0.000154 ***
+BILL_AMT2    1.372e-06  1.641e-06   0.836 0.402956    
+BILL_AMT3    1.129e-06  1.506e-06   0.749 0.453558    
+BILL_AMT4   -1.808e-07  1.538e-06  -0.118 0.906417    
+BILL_AMT5    1.148e-06  1.702e-06   0.674 0.500139    
+BILL_AMT6    4.926e-07  1.341e-06   0.367 0.713432    
+PAY_AMT1    -1.091e-05  2.456e-06  -4.444 8.81e-06 ***
+PAY_AMT2    -1.262e-05  2.553e-06  -4.944 7.64e-07 ***
+PAY_AMT3    -1.506e-06  1.799e-06  -0.837 0.402347    
+PAY_AMT4    -4.314e-06  1.966e-06  -2.194 0.028235 *  
+PAY_AMT5    -3.764e-06  2.105e-06  -1.788 0.073722 .  
+PAY_AMT6    -7.825e-07  1.379e-06  -0.567 0.570443    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 25425  on 23999  degrees of freedom
-Residual deviance: 22252  on 23973  degrees of freedom
-AIC: 22306
+    Null deviance: 25438  on 23999  degrees of freedom
+Residual deviance: 22195  on 23973  degrees of freedom
+AIC: 22249
 
 Number of Fisher Scoring iterations: 6</code></pre>
 </div>
@@ -578,8 +578,8 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Predicted
 Truth     0     1
-    0 18648    19
-    1  5302    31</code></pre>
+    0 18639    23
+    1  5305    33</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(credit_train<span class="sc">$</span>default, </span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>      (prob_train <span class="sc">&gt;</span> <span class="fl">0.5</span>)<span class="sc">*</span><span class="dv">1</span>, </span>
@@ -587,8 +587,8 @@ Truth     0     1
 <div class="cell-output cell-output-stdout">
 <pre><code>     Predicted
 Truth     0     1
-    0 18130   537
-    1  4017  1316</code></pre>
+    0 18098   564
+    1  3959  1379</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(credit_train<span class="sc">$</span>default, </span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>      (prob_train <span class="sc">&gt;</span> <span class="fl">0.2</span>)<span class="sc">*</span><span class="dv">1</span>, </span>
@@ -596,8 +596,8 @@ Truth     0     1
 <div class="cell-output cell-output-stdout">
 <pre><code>     Predicted
 Truth     0     1
-    0 11009  7658
-    1  1562  3771</code></pre>
+    0 11075  7587
+    1  1548  3790</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(credit_train<span class="sc">$</span>default, </span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>      (prob_train <span class="sc">&gt;</span> <span class="fl">0.0001</span>)<span class="sc">*</span><span class="dv">1</span>, </span>
@@ -605,8 +605,8 @@ Truth     0     1
 <div class="cell-output cell-output-stdout">
 <pre><code>     Predicted
 Truth     0     1
-    0     5 18662
-    1     0  5333</code></pre>
+    0     4 18658
+    1     0  5338</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>cost1 <span class="ot">&lt;-</span> <span class="cf">function</span>(r, pi, <span class="at">pcut =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>){</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(((r<span class="sc">==</span><span class="dv">0</span>)<span class="sc">&amp;</span>(pi<span class="sc">&gt;</span>pcut)) <span class="sc">|</span> ((r<span class="sc">==</span><span class="dv">1</span>)<span class="sc">&amp;</span>(pi<span class="sc">&lt;</span>pcut)))</span>
@@ -622,11 +622,11 @@ Truth     0     1
 <span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="fu">cost1</span>(<span class="at">r =</span> credit_train<span class="sc">$</span>default, <span class="at">pi =</span> prob_train, <span class="at">pcut=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.18975</code></pre>
+<pre><code>[1] 0.1884583</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cost2</span>(<span class="at">r =</span> credit_train<span class="sc">$</span>default, <span class="at">pi =</span> prob_train, <span class="at">pcut=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6809583</code></pre>
+<pre><code>[1] 0.6735</code></pre>
 </div>
 </div>
 <p>We construct the ROC curve on the training set.</p>
@@ -648,7 +648,7 @@ Truth     0     1
 </div>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unlist</span>(<span class="fu">slot</span>(<span class="fu">performance</span>(pred, <span class="st">"auc"</span>), <span class="st">"y.values"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7278298</code></pre>
+<pre><code>[1] 0.7311572</code></pre>
 </div>
 </div>
 <p>Finally, we evaluate it on the test set using ROC and AUC.</p>
@@ -669,22 +669,28 @@ Truth     0     1
 </div>
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unlist</span>(<span class="fu">slot</span>(<span class="fu">performance</span>(pred, <span class="st">"auc"</span>), <span class="st">"y.values"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.717574</code></pre>
+<pre><code>[1] 0.7040469</code></pre>
 </div>
 </div>
 </section>
 <section id="cross-validation" class="level2">
 <h2 class="anchored" data-anchor-id="cross-validation">3.3. Cross Validation</h2>
+<p>To evaluate the generalized linear model using cross validation, we use the R function cv.glm(). This function conducts the K-fold cross-validation for the generalized linear models and obtain its prediction error.</p>
+<p>The syntax is cv.glm(data, glmfit, cost, K)</p>
+<p>data: the full data</p>
+<p>glmfit: the generalized linear model we build</p>
+<p>cost: it is by default tne mean squared error (MSE) for regression. We need to adjust it for classification, e.g.&nbsp;((asymmetric) misclassification rate, AUC)</p>
+<p>K: the number of folds in cross validation. It is by default n, i.e., the sample size. Typically we use K=2, … ,10.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>pcut <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Symmetric cost, equivalently pcut=1/2</span></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>cost1 <span class="ot">&lt;-</span> <span class="cf">function</span>(r, pi, <span class="at">pcut=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>){</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>sym_cost <span class="ot">&lt;-</span> <span class="cf">function</span>(r, pi, <span class="at">pcut=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>){</span>
 <span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(((r<span class="sc">==</span><span class="dv">0</span>)<span class="sc">&amp;</span>(pi<span class="sc">&gt;</span>pcut)) <span class="sc">|</span> ((r<span class="sc">==</span><span class="dv">1</span>)<span class="sc">&amp;</span>(pi<span class="sc">&lt;</span>pcut)))</span>
 <span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Asymmetric cost, pcut=1/(5+1) for 5:1 ratio</span></span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>costfunc  <span class="ot">&lt;-</span> <span class="cf">function</span>(obs, pred.p){</span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>asym_cost  <span class="ot">&lt;-</span> <span class="cf">function</span>(obs, pred.p){</span>
 <span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># define the weight for "true=1 but pred=0" (FN)</span></span>
 <span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>  weight1 <span class="ot">&lt;-</span> <span class="dv">5</span>   </span>
 <span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># define the weight for "true=0 but pred=1" (FP)</span></span>
@@ -701,7 +707,7 @@ Truth     0     1
 <span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a>} <span class="co"># end </span></span>
 <span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a><span class="co">#AUC as cost</span></span>
-<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>costfunc1 <span class="ot">=</span> <span class="cf">function</span>(obs, pred.p){</span>
+<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>AUC_cost <span class="ot">=</span> <span class="cf">function</span>(obs, pred.p){</span>
 <span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a>  pred <span class="ot">&lt;-</span> <span class="fu">prediction</span>(pred.p, obs)</span>
 <span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a>  perf <span class="ot">&lt;-</span> <span class="fu">performance</span>(pred, <span class="st">"tpr"</span>, <span class="st">"fpr"</span>)</span>
 <span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a>  cost <span class="ot">=</span><span class="fu">unlist</span>(<span class="fu">slot</span>(<span class="fu">performance</span>(pred, <span class="st">"auc"</span>), </span>
@@ -716,212 +722,59 @@ Truth     0     1
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>cv_result  <span class="ot">&lt;-</span> <span class="fu">cv.glm</span>(<span class="at">data =</span> credit, </span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">glmfit =</span> credit_glm, </span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">cost =</span> costfunc, </span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">K=</span><span class="dv">10</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric misclassification error rate as cost </span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>cv_result  <span class="ot">&lt;-</span> <span class="fu">cv.glm</span>(<span class="at">data =</span> credit, </span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">glmfit =</span> credit_glm, </span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">cost =</span> sym_cost, </span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">K=</span><span class="dv">10</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#asymmetric misclassification rate 5:1 as cost </span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>cv_result<span class="sc">$</span>delta[<span class="dv">2</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>cv_result<span class="sc">$</span>delta[<span class="dv">2</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.68473</code></pre>
+<pre><code>[1] 0.1895567</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ROCR)</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>cv_result1  <span class="ot">&lt;-</span> <span class="fu">cv.glm</span>(<span class="at">data =</span> credit, </span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">glmfit =</span> credit_glm, </span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">cost =</span> costfunc1, </span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">K=</span><span class="dv">10</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric misclassification error rate 5:1 as cost </span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>cv_result  <span class="ot">&lt;-</span> <span class="fu">cv.glm</span>(<span class="at">data =</span> credit, </span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">glmfit =</span> credit_glm, </span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">cost =</span> asym_cost, </span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">K=</span><span class="dv">10</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>cv_result1<span class="sc">$</span>delta[<span class="dv">2</span>] <span class="co">#AUC as cost</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>cv_result<span class="sc">$</span>delta[<span class="dv">2</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7242189</code></pre>
+<pre><code>[1] 0.6850033</code></pre>
 </div>
-</div>
-<p>To evaluate the generalized linear model, we use the R function cv.glm(). This function conducts the K-fold cross-validation for the generalized linear models and obtain its prediction error.</p>
-<p>The syntax is</p>
-<p>cv.glm(data, glmfit, cost, K)</p>
-<p>Here, data: the full data</p>
-<p>glmfit: the generalized linear model we build</p>
-<p>cost: it is by default tne mean squared error (MSE) for regression. We need to adjust it for classification, e.g.&nbsp;((asymmetric) misclassification rate, AUC)</p>
-<p>K: the number of folds in cross validation. It is by default n, i.e., the sample size. Typically we use K=2, … ,10.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>cost_lm <span class="ot">=</span> <span class="cf">function</span>(y, yhat){</span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># y is a vector of response</span></span>
-<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># yhat is a vector of predicted response.</span></span>
-<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>((y<span class="sc">-</span>yhat)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>credit <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"data/credit_default.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 30000 Columns: 24
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-dbl (24): LIMIT_BAL, SEX, EDUCATION, MARRIAGE, AGE, PAY_0, PAY_2, PAY_3, PAY...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>credit_glm <span class="ot">=</span> <span class="fu">glm</span>(default <span class="sc">~</span> .,</span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> binomial, </span>
-<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> credit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cv.glm</span>(credit, credit_glm, cost1, <span class="at">K =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># AUC as the cost</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ROCR)</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>cv_result1  <span class="ot">&lt;-</span> <span class="fu">cv.glm</span>(<span class="at">data =</span> credit, </span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">glmfit =</span> credit_glm, </span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">cost =</span> AUC_cost, </span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">K=</span><span class="dv">10</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>cv_result1<span class="sc">$</span>delta[<span class="dv">2</span>] <span class="co">#AUC as cost</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>$call
-cv.glm(data = credit, glmfit = credit_glm, cost = cost1, K = 10)
-
-$K
-[1] 10
-
-$delta
-[1] 0.1889667 0.1888667
-
-$seed
-  [1]       10403         119 -1497659119 -1907567746  -309628768 -1607046016
-  [7]  1934713708  1094868808   200497945 -2020662419   773912346  1546182931
- [13]   275258235  2043938394 -1700090502  -567716057   885331996  -513902579
- [19]  -789696225 -1172103572  2044244285 -1343338151 -2011974632   917530680
- [25]  -597014796   437300560  1776169624 -1961803802 -1016026046   998921823
- [31]   805059170   522088832  1463152096     3227512 -1747626402 -1233263776
- [37]  1860288804 -1793197120   -42423694  -394349824  1731067480 -2054508277
- [43] -1132314749   560311788  -401684176  1883487245 -1571695456  -270693879
- [49]   -52430361 -1525843947  1110995381  -570569023 -1004801277  -429832132
- [55]   181436557 -1424889565   625025090 -1519988645  1579756798 -1560389152
- [61]   -13381453 -1370565831   120883462   932150811 -1847577285  1592153365
- [67]  1036578443   548158310  -403684164   568780077  -818077494 -1577427264
- [73]  1582594212  -973145600  -903640844  -815567031 -2050689441   872382846
- [79]  -925860568 -1966341289   -89584885   107490046  1873843978  -585332177
- [85] -1429426287  1958990803  -921753934  1267959130  1903575746    97429560
- [91] -1973620758  -290944108 -1145860843  1115629836   786627817  1554695787
- [97]  1372473098   789214486 -1013714984  1383622280  -418858627   409808950
-[103]  -227950721  -716231446  -336770150  1631958963  -257516758  -445064083
-[109]   318054000   248439325 -1930114011  1450572217  -905109197  -817886251
-[115] -1299826241  -825312108  -244314466 -2115527973 -1527842028   281848178
-[121]   -69318491 -1063665620   437153537  1466336130   857205096  1791397891
-[127]   -89166244   424633025  1413358350  1322680657 -1683017787   750213713
-[133]  1791993513 -1701914707  -610425382 -1221264917 -1932068740  1952120000
-[139]  -989687276  -706047966  2143638623  -761976749  1113016008   349785511
-[145] -1541687564  -312619984  1923626012 -1901707467  1053443833 -2102190973
-[151]  -479165003 -1796764781  1323828116  -721281138   399685945   801755769
-[157]   859043754  1918201714 -2042111584  -842088620  1410555709  1593901713
-[163]  1035220122   -53331966   271888010  -198105869 -1111751147  -234250275
-[169]  -676215643   293752010  1537209298  1327740569  -617444133 -1256990890
-[175]  1247006211  -739109983 -1324985754   970697138 -1071338404  1061177692
-[181]   853732100   636898520  -640534925  -220821964 -1950280987   316297257
-[187] -1857726311 -2079992334   833940123   474720252 -1502865451  1366212353
-[193]    77150527  1893442038 -1093646406  1531197171   934363089   895989262
-[199]  -475853673  1898114821 -1502561817    52378962  -612436495  2103067463
-[205]  1590406840   227960702  -516678077    19254631 -1484846902   228437880
-[211]  1132082245 -2059357325 -1237750935  1085731935   -22682490  1239071128
-[217]  1393099251  -498748359   652471364   102969003  2111673348  -656179637
-[223]   246747965 -1681075178   663435201  1142642113  -204364516 -1048439036
-[229]  -192310491  -906521860   706690432 -1154920676     7367138  1561144537
-[235]  -760980506   970594435  -984173301  1028413043  1786751882  -545054749
-[241] -1092356553   519427582   -96272654 -2129907137  1775862053  1935327980
-[247] -1165110112  -313630519  -464787425  2016439525  -115196735  1056270408
-[253]  -435672427  1452708515   482240326  1794351225  -384503152  1477189072
-[259]   766354435 -1927091536 -1403374710  1411209486   760423353   280921942
-[265]  -588296819    26081607  -823323553   639954054  1703852801 -1641563498
-[271]   809797091  1410500439   864292594   675096115 -2103617322 -1069525098
-[277]  1676836899 -1669452585  2111552527  -542353270 -1310885926 -1813210798
-[283] -1105354116   593189757  -201841589  -977656699  1027596917   726031217
-[289]    14518389   -71691180 -1925532350  -953469975  2023785875  -584012987
-[295]  2101699531  1453571860  1446032306   922333212  -286422693  1999122605
-[301]  -261791290  -620878944 -1247924782  1301174913  1129695584  -397935559
-[307]   972931928  -363742306 -1752105286  -246476887   192074269   267687101
-[313]  1096678997   860534506 -1905575496  -402047833  -259925606   577713605
-[319]  -456345764   995847619  1732051280 -1826522776   734469817 -1868702855
-[325] -1210843977  2080696047   796488487 -1627724985  -720694616  1922873614
-[331]   281576765   355570372 -2103028347  1146293340  1554394547 -1584598382
-[337]  -182912006  1547388519  -247480031   549370883   984967578 -1871684833
-[343]   -59254254 -1020052959    96450858   713070514   285149120   719968620
-[349] -2033324964  1602031709  -252849284   163010008   405329120   152837175
-[355]   651623432   278374198  1568251121  1741889216 -1908489055 -1298979918
-[361]   946556363   850471327  1533526282     6556399   119264998 -1206218781
-[367]   543208027     2299385 -1779776891  -146277328 -1886699495   895330909
-[373]  -663018398  -772945399 -1817116084 -1750126213  -101270157  1306896851
-[379]  2125433061 -2144583816 -1135214710  1614731434  -973487341  1744699856
-[385]  1540579427   695482564  -921798232   570126262  -153305758 -1336883810
-[391]   906842480  1103777092  1326128717  1393200723  1531987681  -504679248
-[397] -1015259076 -1772227360  2104505055  -921147135    78960565  1166538171
-[403]  -651401854   112504440   541893926  -418591431  -364172292   -12133553
-[409] -1998749247  1146025740  -791993437  -762698681 -1214360083 -1088099032
-[415] -1088295241  1127864457   394834538  1150799576  -803209051   687449844
-[421]   702293755  -809192261  1874817745  -789140917  1836278607  -209355027
-[427] -1483151251  2011491335 -1700564244   144129470  -626227028   681711297
-[433]  -712970124  1700101854  1933240623  2146233501  -521059773 -1214670444
-[439]  1781708433 -1227810674  1264391007   991273180   909911961 -2103285881
-[445]  1021318268   513841426  1496814066  -540546225  1110555409  1047214236
-[451]  1858239134  1966148423   580325360  -469354616 -1625225880  2071032729
-[457]  1936658982  1005683444   125206918 -1194670309   882690191  -839990377
-[463]  -834857853   861997584 -1331308832  1237279233  -892796981   949930849
-[469]   838809215  1656156622  -605686267  -689238990  1039334585  -232322708
-[475]   625024329  1677674463 -1096953550   174522696   869228144 -1043848357
-[481] -1970471523    38158122 -1447680057   697524827  -429339653  -627020572
-[487] -2031203968  2028335280  -648375298  -116046899  -667585645   280350416
-[493]   -46589892  -290841395  -631807336 -1647671872    16472311 -1710836307
-[499]   147275986   710699541  -285668661  1797249501  -866815773  -311383918
-[505]  1514682401   700950293    77002767   879482524  2008789689  1870020497
-[511]   387882760  -195818639    43569484 -1907051828 -1935504419 -1792443807
-[517] -2122476682   523196963 -1849420806  -689190488  1200360588  1914246735
-[523]   439572830  -330148459  -512450835  -481342310   933411847   137507653
-[529]  1509148311  1156008134 -1799520796  1167491013  1256409064 -1935302425
-[535] -1308903557 -1568282535   477869894  -374259718   863520769   553281443
-[541] -1142983472   626782557  -442283271  1409667737 -2026028421   902826265
-[547] -1356388459 -1260163733   391102933  1543666504 -1376385483  -683553716
-[553]   756213585   111249647 -1133453510  1487233942 -1118717310   550612639
-[559] -1742636575  -943697423 -1631640475   939771196  2139449022 -1132522102
-[565]    14612369 -1486008207  -877879021  1409120192   990886866 -1823107336
-[571]    -5562243 -2017841244   376046116  -270982955  1531927218  -186754828
-[577]  1647152011   235417978   141868970 -1118588059 -1238880799   670699535
-[583]  2135376388 -1929671842 -1381151447 -1595645165   832765175  1793683847
-[589]  1505195256   514622655  2113999176  1666571323   402245107  1796854195
-[595] -1339641858 -1682052537    95221802  -334166570  1178983388 -2024092683
-[601]   270812619  1986336459  1026191358  -442973522  -802316723 -2078057594
-[607] -1510075280   528183430  1981567633 -1001854095 -1357305146 -2140910800
-[613]  -383881108   312888290 -1906763738 -1344974603   868310186  2063138252
-[619]   554553536 -1452532577  -513422572   732500088  -483399248 -1399170353
-[625]  1527881146  -148552056</code></pre>
+<pre><code>[1] 0.7245507</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>pcut <span class="ot">=</span> <span class="fl">0.5</span></span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>cost_glm <span class="ot">=</span> <span class="cf">function</span>(y, pi){</span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># symmetric misclassification</span></span>
-<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>( ((r<span class="sc">==</span><span class="dv">0</span>)<span class="sc">&amp;</span>(pi<span class="sc">&gt;</span>pcut))<span class="sc">|</span>((r<span class="sc">==</span><span class="dv">1</span>)<span class="sc">&amp;</span>(pi<span class="sc">&lt;</span>pcut)) )</span>
-<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>How to use cv.glm()?</p>
 </section>
 </section>
 
