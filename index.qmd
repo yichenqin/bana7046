@@ -1,0 +1,10 @@
+---
+title: "BANA7046 Data Mining I"
+author: "Yichen Qin"
+format: html
+editor: visual
+---
+
+[Module 5 Model Evaluation and Cross Validation](module5.html)
+
+[Module 6 Classification and Regression Trees](module6.html)
